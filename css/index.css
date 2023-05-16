@@ -5905,33 +5905,86 @@ linear-gradient(60deg, rgba(255,165,150,0.5) 5%, rgba(0,228,255,0.35))
 .layout>#archive {
   background: rgba(255,255,255,0.6);
 }
-#nav-right {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-box-pack: end;
-  -moz-box-pack: end;
-  -o-box-pack: end;
-  -ms-flex-pack: end;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-  margin-left: auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-lines: single;
-  -moz-box-lines: single;
-  -o-box-lines: single;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+.nav-fixed #nav {
+  -webkit-transform: translateY(58px) !important;
+  -moz-transform: translateY(58px) !important;
+  -o-transform: translateY(58px) !important;
+  -ms-transform: translateY(58px) !important;
+  transform: translateY(58px) !important;
+  -webkit-transform: translateY(58px) !important;
+  -moz-transform: translateY(58px) !important;
+  -ms-transform: translateY(58px) !important;
+  -o-transform: translateY(58px) !important;
+}
+#nav {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+#page-name::before {
+  font-size: 18px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  color: #fff !important;
+  top: 0;
+  left: 0;
+  background-color: var(--lyx-theme);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-box-shadow: 0 0 3px var(--lyx-theme);
+  box-shadow: 0 0 3px var(--lyx-theme);
+  line-height: 45px;
+/*如果垂直位置不居中可以微调此值，也可以删了*/
+}
+#page-name:hover:before {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+@media screen and (max-width: 900px) {
+  #page-name,
+  #menus {
+    display: none !important;
+  }
+}
+#name-container {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+#name-container:hover {
+  scale: 1.03;
+}
+#page-name {
+  position: relative;
+  padding: 10px 30px;
+}
+#nav {
+  padding: 0 20px;
 }
 @-moz-keyframes gradientBG {
   0% {
@@ -6020,184 +6073,4 @@ linear-gradient(60deg, rgba(255,165,150,0.5) 5%, rgba(0,228,255,0.35))
   100% {
     background-position: 0% 50%;
   }
-}
-.nav-fixed #nav {
-  -webkit-transform: translateY(58px) !important;
-  -moz-transform: translateY(58px) !important;
-  -o-transform: translateY(58px) !important;
-  -ms-transform: translateY(58px) !important;
-  transform: translateY(58px) !important;
-  -webkit-transform: translateY(58px) !important;
-  -moz-transform: translateY(58px) !important;
-  -ms-transform: translateY(58px) !important;
-  -o-transform: translateY(58px) !important;
-}
-#nav {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  -ms-transition: none !important;
-  transition: none !important;
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-}
-/*显示标题*/
-#page-name::before {
-  font-size: 18px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  color: #fff !important;
-  top: 0;
-  left: 0;
-  background-color: var(--lyx-theme);
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-box-shadow: 0 0 3px var(--lyx-theme);
-  box-shadow: 0 0 3px var(--lyx-theme);
-  line-height: 45px;
-/*如果垂直位置不居中可以微调此值，也可以删了*/
-}
-#page-name:hover:before {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-@media screen and (max-width: 900px) {
-  #page-name,
-  #menus {
-    display: none !important;
-  }
-}
-#name-container {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-}
-#name-container:hover {
-  scale: 1.03;
-}
-#page-name {
-  position: relative;
-  padding: 10px 30px;
-}
-#nav {
-  padding: 0 20px;
-}
-/*顶部加载进度条*/
-.pace {
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  z-index: 2;
-  position: fixed;
-  margin: auto;
-  top: 4px;
-  left: 0;
-  right: 0;
-  height: 8px;
-  border-radius: 8px;
-  width: 6rem;
-  background: #eaecf2;
-  overflow: hidden;
-}
-.pace-inactive .pace-progress {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-transition: 0.3s ease-in;
-  -moz-transition: 0.3s ease-in;
-  -o-transition: 0.3s ease-in;
-  -ms-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
-}
-.pace.pace-inactive {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -ms-transition: 0.3s;
-  transition: 0.3s;
-  top: -8px;
-}
-.pace .pace-progress {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  position: fixed;
-  z-index: 2;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 100%;
-  height: 100%;
-  width: 100%;
-  background: #49b1f5;
-  background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: -moz-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: -o-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: -ms-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
-  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
-  -webkit-animation: gradient 2s ease infinite;
-  -moz-animation: gradient 2s ease infinite;
-  -o-animation: gradient 2s ease infinite;
-  -ms-animation: gradient 2s ease infinite;
-  animation: gradient 2s ease infinite;
-  background-size: 200%;
-}
-#nav-right {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-box-pack: end;
-  -moz-box-pack: end;
-  -o-box-pack: end;
-  -ms-flex-pack: end;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-  margin-left: auto;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-lines: single;
-  -moz-box-lines: single;
-  -o-box-lines: single;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
 }
